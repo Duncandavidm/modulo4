@@ -51,6 +51,34 @@ class ListItem extends StatelessWidget {
                 },
                 child: Text("more"),
               )
+              import 'package:flutter/material.dart';
+import 'package:mi_proyecto/data/models/random_user.dart';
+
+class UserListScreen extends StatelessWidget {
+  final List<RandomUser> userList;
+
+  UserListScreen({required this.userList});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Usuarios'),
+      ),
+      body: ListView.builder(
+        itemCount: userList.length,
+        itemBuilder: (context, index) {
+          final user = userList[index];
+          return ListTile(
+            title: Text(user.name),
+            subtitle: Text(user.email),
+          );
+        },
+      ),
+    );
+  }
+}
+
             ],
           ),
         ),

@@ -66,5 +66,29 @@ class UserLocalDataSource {
     Database db = await database;
     //TODO
     // aquí se debe llamar al db.update actualizando nombre y cuidad usando el where con el id  - tabla users
+    class RandomUser {
+  final String id;
+  final String name;
+  final String email;
+  // Otros campos según tus necesidades.
+
+  RandomUser({
+    required this.id,
+    required this.name,
+    required this.email,
+    // Incluye otros campos aquí.
+  });
+  import 'package:mi_proyecto/data/models/random_user.dart';
+
+class GetRandomUserUseCase {
+  final RandomUserRepository repository;
+
+  GetRandomUserUseCase(this.repository);
+
+  Future<RandomUser> execute() async {
+    return await repository.getRandomUser();
+  }
+}
+}
   }
 }

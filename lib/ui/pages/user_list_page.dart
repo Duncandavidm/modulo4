@@ -56,6 +56,30 @@ class UserListPage extends StatelessWidget {
           final user = userController.users[index];
           return ListItem(user);
         },
+        import 'package:flutter/material.dart';
+import 'package:mi_proyecto/data/models/random_user.dart'; 
+import 'package:mi_proyecto/presentation/pages/user_list_screen.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final List<RandomUser> userList = [
+      RandomUser(id: '1', name: 'Usuario 1', email: 'usuario1@example.com'),
+      RandomUser(id: '2', name: 'Usuario 2', email: 'usuario2@example.com'),
+      // Agrega más usuarios a la lista según tus necesidades.
+    ];
+
+    return MaterialApp(
+      title: 'Mi Proyecto',
+      home: UserListScreen(userList: userList),
+    );
+  }
+}
+
       ),
     );
   }
